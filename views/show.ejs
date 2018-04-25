@@ -1,5 +1,16 @@
 <% include partials/header %>
-
-<p><%=campground.name%></p>
+<div class='ui main text container segment'>
+    <div class='ui huge header'><%=campground.name%></div>
+   <img src='<%= campground.image %>'>
+   <p><%= campground.description %></p>
+   <form action='/campgrounds/<%=campground._id%>/edit' methoc='GET'>
+        <button class="ui orange basic button">Edit</button>
+   </form>
+   <form action='/campgrounds/<%= campground._id%>?_method=DELETE' method='POST'>
+        <button class="ui red basic button">Delete</button>
+    </form>
+    <a href='/campgrounds'>Go Back</a>
+</div>
+<p></p>
 
 <% include partials/footer %>
