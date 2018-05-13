@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include ../partials/header %>
 <div class='ui main text container segment'>
     <div class='ui huge header'><%=campground.name%></div>
    <img src='<%= campground.image %>'>
@@ -10,6 +10,7 @@
      </p>
      <% }) %>
    
+   <a href='/campgrounds/<%= campground._id %>/comments/new'>Add New Comment</a>
    <form action='/campgrounds/<%=campground._id%>/edit' methoc='GET'>
         <button class="ui orange basic button">Edit</button>
    </form>
@@ -20,4 +21,4 @@
 </div>
 <p></p>
 
-<% include partials/footer %>
+<% include ../partials/footer %>
