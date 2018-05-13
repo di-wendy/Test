@@ -12,12 +12,6 @@ var express = require("express"),
     seedDB = require("./seeds");
     
 seedDB();
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    console.log(req.user);
-    next(); 
-    // move to next middleware, router handler
-})
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -40,6 +34,12 @@ app.use(methodOverride("_method"));
 //CONNECT to mongoose Database
 mongoose.connect("mongodb://localhost/yelp_camp");
 
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next(); 
+    // move to next middleware, router handler
+})
+
 //INDEX ROUTE
 app.get('/',function(req, res){
     res.render('landing');
@@ -53,12 +53,14 @@ app.get('/campgrounds/new', function(req, res){
 //SHOW
 app.get('/campgrounds', function(req, res){
     //Get all campgrounds from DB
+    //console.log(req.user);
     Campground.find({}, function(err, Allcampgrounds){
         if(err){
             console.log(err);
         }
         else{
-            res.render('campgrounds/campgrounds', {campgrounds:Allcampgrounds});
+            res.render('campgrounds/campgrounds', {campgrounds:Allcampgrounds,
+                                                currentUser:req.user});
         }
     }) 
 });
@@ -191,7 +193,7 @@ app.get('/login', (req, res) => {
 app.post('/login', passport.authenticate('local',
     {
         successRedirect: '/campgrounds',
-        failureRedirct: '/login'
+        failureRedirect: '/login'
     }), (req, res) =>{
 
     }
