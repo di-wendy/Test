@@ -41,7 +41,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 
 //CONNECT to mongoose Database
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect('mongodb://localhost/yelp_camp');
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds121950.mlab.com:21950/yelpcamp');
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
