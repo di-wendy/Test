@@ -36,26 +36,26 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 50s linear infinite; 
+    animation: imageAnimation 25s linear infinite; 
 }
 
 .slideshow li:nth-child(1) { 
-    background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+    background-image: url(http://www.brotherhood-winery.com/_images/brotherhood_winery_cellars_1.jpg) 
   }
   .slideshow li:nth-child(2) { 
-    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+    background-image: url(http://www.gildedgrape.com/assets/Fotolia-46203053-X-c-r.jpg);
     animation-delay: 10s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(http://i.imgur.com/emvhOnb.jpg);
+    background-image: url(https://spotlight.it-notes.ru/wp-content/uploads/2017/08/b56cdf4b0ac64fe82206673e2348906a.jpg);
     animation-delay: 20s; 
   }
   .slideshow li:nth-child(4) { 
-    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+    background-image: url(https://www.hospitalitymarketplace.co.za/wp-content/uploads/2018/03/istock-516799356.jpg);
     animation-delay: 30s; 
   }
   .slideshow li:nth-child(5) { 
-    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+    background-image: url(https://res-5.cloudinary.com/simpleview/image/fetch/c_fill,f_auto,h_500,q_80,w_610/http://res.cloudinary.com/simpleview/image/upload/v1467405511/clients/napavalley/Chimney_Rock_vineyard_1ae47b90-9587-43b8-99ea-0578fc039594.png);
     animation-delay: 40s; 
   }
 
